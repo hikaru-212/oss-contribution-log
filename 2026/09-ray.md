@@ -1,6 +1,8 @@
 # 2026-09 — Ray
 
-Upstream Ray contributions recorded for September 2026.
+## Summary
+
+September work focused on Ray Core scheduling and actor retry semantics. One Placement Group recovery fix is under upstream review, while a separate actor restart / per-call retry mismatch has a local implementation and focused tests ready for a Draft PR.
 
 ## Contributions
 

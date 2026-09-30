@@ -1,6 +1,8 @@
 # 2026-09 — Apache YuniKorn
 
-Upstream Apache YuniKorn contributions recorded for September 2026.
+## Summary
+
+September work covered deletion recovery, autoscaling lifecycle correctness, flaky-test reliability, and preemption review. Two fixes were merged, one k8shim fix remains under review, and one Core fix is ready locally.
 
 ## Contributions
 

@@ -1,6 +1,8 @@
 # YYYY-MM — Project / Track
 
-Brief one-line description of the reporting scope.
+## Summary
+
+One or two concise sentences summarizing the month's main technical themes, contribution types, and current overall status.
 
 ## Contributions
 
@@ -21,6 +23,7 @@ Concise description of the behavior, failure, or question investigated.
 - Issue: <link>
 - Pull request: <link>
 - Review / discussion: <link, if applicable>
+- Technical write-up: <link, if applicable>
 
 **Status**
 
