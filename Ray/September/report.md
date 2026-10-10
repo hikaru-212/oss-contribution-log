@@ -4,11 +4,15 @@
 
 ## Summary
 
-Code Review: 2
+- **PR:** 2 (2 under review)
+- **Code Review:** 2
+- **Technical Write-up:** 1
 
-The reporting period focused on Ray Core scheduling, recovery, and actor retry semantics, with additional correctness reviews covering GCS restart reconciliation and Ray Data error-contract behavior. One Placement Group recovery fix is under upstream review, while a separate actor restart / per-call retry fix is open and ready for review.
+This period focused on Ray Core scheduling, recovery, and actor retry semantics,
+with additional correctness reviews covering GCS restart reconciliation and
+Ray Data error-contract behavior.
 
-## Contributions
+## Pull Requests
 
 ### Ray #65147 / PR #65970 — Placement Group recovery retry starvation
 
@@ -63,20 +67,45 @@ Open; ready for review.
 
 ## Code Reviews
 
-### [Ray #66326 — GCS restart reconciliation gate](https://github.com/ray-project/ray/pull/66326)
+### Ray #66326 — GCS restart reconciliation gate
 
-- Reviewed the restart reconciliation path and found that the reconciliation gate could be cleared after a non-OK `ReleaseUnusedActorWorkers` result.
-- Constructed a deterministic failure path where the node remains alive, cleanup is not established as successful, but a subsequent scheduling retry sends a new worker lease.
+**Problem**
+
+The restart-reconciliation gate could be cleared after a non-OK `ReleaseUnusedActorWorkers` result, allowing new worker leases before cleanup had been established as successful.
+
+**Work**
+
+- Reviewed the GCS restart reconciliation path.
+- Constructed a deterministic failure path where the node remains alive, cleanup returns `UNAVAILABLE`, but a later scheduling retry sends a new worker lease.
 - Asked whether reconciliation should remain active until cleanup succeeds or node removal is confirmed.
 
-**Status:** Review comment posted; upstream discussion pending.
+**Evidence**
+
+- Pull request: [ray-project/ray#66326](https://github.com/ray-project/ray/pull/66326)
+
+**Status**
+
+Review comment posted; upstream discussion pending.
 
 ---
 
-### [Ray #66878 — JSONL exception subtype preservation](https://github.com/ray-project/ray/pull/66878)
+### Ray #66878 — JSONL exception subtype preservation
 
-- Reviewed the new JSON/JSONL error-context handling and noticed that the broad `ValueError` wrapper also catches `UnicodeDecodeError`.
-- Reproduced the behavior in both chunk-size estimation and direct JSONL reading: invalid UTF-8 that previously raised `UnicodeDecodeError` becomes a plain `ValueError`.
+**Problem**
+
+The new JSONL error-context wrapper catches `ValueError`, but `UnicodeDecodeError` is a subclass of `ValueError`, potentially changing the public exception behavior for invalid UTF-8 input.
+
+**Work**
+
+- Reviewed the JSON/JSONL error-context handling.
+- Reproduced the behavior in both chunk-size estimation and direct JSONL reading.
+- Confirmed that input which previously raised `UnicodeDecodeError` becomes a plain `ValueError`.
 - Asked whether this normalization is intentional or whether the original subtype should be preserved consistently with the Arrow fallback.
 
-**Status:** Review comment posted; upstream discussion pending.
+**Evidence**
+
+- Pull request: [ray-project/ray#66878](https://github.com/ray-project/ray/pull/66878)
+
+**Status**
+
+Review finding accepted by the author; the exception subtype will be preserved and regression coverage added.
