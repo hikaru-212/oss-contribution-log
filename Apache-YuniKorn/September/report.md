@@ -1,10 +1,15 @@
 # September 2026 — Apache YuniKorn
 
-**Reporting period:** 2026-09-01 to 2026-10-10
+**Reporting period:** 2026-09-09 to 2026-10-09
 
 ## Summary
 
-September work covered deletion recovery, autoscaling lifecycle correctness, flaky-test reliability, and preemption review. Two fixes were merged, one k8shim fix remains under review, and one Core fix is under review.
+- **PR:** 4 (2 merged, 2 under review)
+- **Code Review:** 1
+- **Filed JIRA:** 1
+
+This period covered deletion recovery, autoscaling lifecycle correctness,
+flaky-test reliability, and preemption review across YuniKorn Core and k8shim.
 
 ## Pull Requests
 
@@ -55,7 +60,7 @@ Open; substantive scheduler-semantics review in progress.
 
 ---
 
-### YUNIKORN-3470 — Webservice shutdown flake
+### YUNIKORN-3470 / PR #1168 — Webservice shutdown flake
 
 **Problem**
 
@@ -119,3 +124,9 @@ The current early `break` can stop victim scanning after one candidate exceeds t
 **Status**
 
 Provided technical review and benchmark evidence; no implementation submitted.
+
+---
+
+## Filed JIRA
+
+- [YUNIKORN-3470 — Flaky webservice shutdown caused by incomplete HTTP response body cleanup](https://issues.apache.org/jira/browse/YUNIKORN-3470) — reported and reproduced the shutdown flake, then followed through with PR #1168.
