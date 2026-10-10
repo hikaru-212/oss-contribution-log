@@ -1,10 +1,12 @@
-# 2026-09 — Apache YuniKorn
+# September 2026 — Apache YuniKorn
+
+**Reporting period:** 2026-09-01 to 2026-10-10
 
 ## Summary
 
-September work covered deletion recovery, autoscaling lifecycle correctness, flaky-test reliability, and preemption review. Two fixes were merged, one k8shim fix remains under review, and one Core fix is ready locally.
+September work covered deletion recovery, autoscaling lifecycle correctness, flaky-test reliability, and preemption review. Two fixes were merged, one k8shim fix remains under review, and one Core fix is under review.
 
-## Contributions
+## Pull Requests
 
 ### YUNIKORN-3382 / PR #1093 — Failed Pod deletion re-drive with UID fencing
 
@@ -30,7 +32,7 @@ Reviewer feedback addressed and all CI checks pass; awaiting upstream re-review 
 
 ---
 
-### YUNIKORN-3448 — Autoscaling advertisement lifecycle
+### YUNIKORN-3448 / PR #1177 — Autoscaling advertisement lifecycle
 
 **Problem**
 
@@ -45,10 +47,11 @@ An ask that had already advertised scale-up demand could lose policy headroom wi
 **Evidence**
 
 - Issue: [YUNIKORN-3448](https://issues.apache.org/jira/browse/YUNIKORN-3448)
+- Pull request: [apache/yunikorn-core#1177](https://github.com/apache/yunikorn-core/pull/1177)
 
 **Status**
 
-Issue claimed and investigation posted upstream. Local implementation and focused tests are ready; PR not yet opened.
+Open; substantive scheduler-semantics review in progress.
 
 ---
 
@@ -94,6 +97,8 @@ The quota-preemption E2E test could fail during setup because the initial Pod re
 Merged upstream.
 
 ---
+
+## Code Reviews
 
 ### PR #1161 — Preemption victim scan tradeoff review
 

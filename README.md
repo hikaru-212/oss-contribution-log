@@ -1,12 +1,16 @@
 # OSS Contribution Log
 
-A public index of verifiable upstream open-source contributions, with evidence from issues, pull requests, reviews, discussions, and tests.
+This repository is a public index of verifiable upstream open-source contributions.
+
+Reports are organized by project and reporting period and contain links to upstream issues, pull requests, reviews, technical discussions, and other relevant evidence.
 
 ## Reports
 
-| Month | Project / Track | Report |
-| --- | --- | --- |
-| September 2026 | Ray | [Report](2026/09-ray.md) |
-| September 2026 | Apache YuniKorn | [Report](2026/09-yunikorn.md) |
+| Project | September 2026 |
+| --- | --- |
+| Ray | [Report](./Ray/September/report.md) |
+| Apache YuniKorn | [Report](./Apache-YuniKorn/September/report.md) |
 
 Use the [monthly contribution template](templates/monthly.md) for new reports.
+
+Ray reports can be linked directly from this repository. Apache YuniKorn reports are the personal source of truth and may be copied into the shared `opensource4you/readme` contribution-report path when required.

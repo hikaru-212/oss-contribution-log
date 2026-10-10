@@ -1,30 +1,57 @@
-# YYYY-MM — Project / Track
+# YYYY Month — Project
+
+**Reporting period:** YYYY-MM-DD to YYYY-MM-DD
 
 ## Summary
 
-One or two concise sentences summarizing the month's main technical themes, contribution types, and current overall status.
+PR: X, Code Review: X, Issue Triage: X, Other Contribution: X
 
-## Contributions
+One or two concise sentences describing the month's main technical focus.
 
-### Short technical title
+## Pull Requests
+
+### [Issue / PR title](link)
 
 **Problem**
 
-Concise description of the behavior, failure, or question investigated.
+Brief description of the technical problem.
 
-**Work**
+**Contribution**
 
-- Specific technical action.
-- Specific technical action.
-- Specific technical action.
-
-**Evidence**
-
-- Issue: <link>
-- Pull request: <link>
-- Review / discussion: <link, if applicable>
-- Technical write-up: <link, if applicable>
+- What was investigated or changed.
+- Important correctness / design reasoning.
+- Regression or validation work.
 
 **Status**
 
-Concise current status with date when useful.
+Merged / Open / Under Review / Draft
+
+---
+
+## Code Reviews
+
+### [PR title](link)
+
+- What was reviewed.
+- What correctness issue, invariant, regression, or design concern was found.
+
+---
+
+## Issue Triage / Technical Discussions
+
+### [Issue / discussion title](link)
+
+- Investigation or technical discussion.
+- Main finding.
+
+---
+
+## Other Contributions
+
+- Technical write-up
+- RC validation
+- Documentation
+- Community / technical sharing
+- Other verifiable project contribution
+
+Sections with zero entries may be omitted in actual monthly reports. Do not add filler text; prefer links and short technical explanations. Contributions do not need to be merged to appear, but their status must be stated accurately.
